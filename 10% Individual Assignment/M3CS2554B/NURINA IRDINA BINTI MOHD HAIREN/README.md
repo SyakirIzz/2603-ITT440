@@ -1,4 +1,4 @@
-# PRIME NUMBER FINDER
+# ⁶⁹📐𓈒𖹭🔢𓈒»〽⭑🖇๋࣭  PRIME NUMBER FINDER  ⭑⚝📈⊹₊ ⋆📑⚛ྀ
 
 #### STUDENT NAME: NURINA IRDINA BINTI MOHD HAIREN
 #### STUDENT ID: 2024239814
@@ -15,6 +15,18 @@ This project is a Python-based utility designed to find prime numbers within a s
 2. Threading (Concurrent): Splitting the range into chunks handled by different threads.
 
 3. Multiprocessing (Parallel): Distributing the workload across multiple CPU cores.
+
+## ⋆. 𐙚 ˚ Problem Statement
+
+1. The Mathematical Challenge
+   
+Finding prime numbers is a computationally intensive task. As the range of numbers increases, the 
+time required to check each number for primality grows significantly. A standard sequential (one-by-
+one) approach becomes inefficient for very large ranges, leading to long execution times.
+
+2. The Technical Bottleneck
+
+Python’s execution is typically single-threaded due to the Global Interpreter Lock (GIL). While this ensures safety, it prevents the program from fully utilizing the power of modern multi-core processors when performing mathematical calculations.
 
 ## ⋆. 𐙚 ˚ System Requirements
 
@@ -64,6 +76,7 @@ python prime_finder.py
 
 <img width="802" height="541" alt="Screenshot 2026-04-22 005546" src="https://github.com/user-attachments/assets/a02b3e5e-8470-4f63-a4c3-4e7194a08f7c" />
 
+##  🎞️✮⋆˙Video Demonstration:
 
 
 
