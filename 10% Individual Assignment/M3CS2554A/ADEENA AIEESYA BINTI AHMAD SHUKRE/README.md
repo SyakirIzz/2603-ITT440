@@ -67,7 +67,31 @@ Finally, the program summarizes the results by counting the number of baggage it
 
 
 
-## RESULTS AND DISCUSSION
+## RESULTS
+As the number of baggage records increased, a clear trend in performance was observed across all three processing techniques. For a small dataset of around 100 records, the execution times for sequential, threading, and multiprocessing methods were relatively close, taking approximately 0.01 seconds, 0.009 seconds, and 0.008 seconds respectively. When the dataset increased to 1,000 records, sequential processing began to take slightly longer at around 0.08 seconds, while threading showed some improvement at 0.06 seconds, and multiprocessing performed slightly faster at 0.04 seconds.
 
+At 10,000 records, the difference became more noticeable. Sequential processing took approximately 0.85 seconds, threading reduced the time to about 0.70 seconds, while multiprocessing showed a much faster execution time of around 0.35 seconds due to its ability to utilize multiple CPU cores. This trend continued as the dataset increased to 100,000 records, where sequential processing took around 8.50 seconds, threading improved performance to approximately 6.90 seconds, and multiprocessing demonstrated a clear advantage with a time of about 3.20 seconds.
+
+When the dataset reached 1,000,000 records, the differences were most significant. Sequential processing took the longest time at approximately 85.00 seconds due to its one-by-one execution approach. Threading showed moderate improvement at around 68.00 seconds, but was still limited for CPU-intensive tasks. In contrast, multiprocessing achieved the fastest execution time at approximately 28.00 seconds by distributing the workload across multiple processes, making it the most efficient method for handling very large datasets.
+
+
+## DISCUSSION
+The system was tested using big scale datasets to evaluate the performance of the three processing techniques. The number of baggage records was varied from tens of thousands up to hundreds of thousand, and up to a million, depending on the system capability.
+
+The execution time for each method was measured and compared. The results generally showed that sequential processing had the longest execution time, as it processes each task one by one without utilizing multiple resources. As the number of baggage records increased, the execution time for sequential processing increased significantly.
+
+The threading approach showed some improvement over sequential processing, as multiple threads were able to handle tasks concurrently. However, the performance improvement was limited. This is mainly due to Python’s Global Interpreter Lock (GIL), which restricts threads from executing CPU-intensive tasks truly in parallel. As a result, threading did not provide a major speed advantage for this type of workload.
+
+In contrast, the multiprocessing approach achieved the best performance among the three methods. By using multiple processes, the program was able to utilize multiple CPU cores, allowing tasks to be executed in parallel. This significantly reduced the total execution time, especially when processing large datasets. The use of a process pool and chunking also helped improve efficiency by distributing tasks evenly among processes.
+
+Overall, the results demonstrate that multiprocessing is the most effective technique for CPU-intensive tasks involving large-scale data, while threading is more suitable for handling multiple tasks that are not heavily dependent on CPU computation. Sequential processing, although simple, is not efficient for large workloads.
+
+
+
+
+## CONCLUSION
+In conclusion, this project successfully developed an airport baggage handling and sorting simulator using Python to process large scale data efficiently. The system implemented three different processing techniques, which are sequential processing, concurrent processing using threading, and parallel processing using multiprocessing, to simulate real world scenarios when a huge amount of baggage records must be handled. The results demonstrated that sequential processing, although simple, becomes inefficient as the dataset size increases due to its one by one execution approach. Threading provided some improvement by allowing tasks to be handled concurrently, but its performance remained limited for CPU intensive operations.
+
+On the other hand, multiprocessing achieved the best performance among all techniques by utilizing multiple CPU cores, enabling true parallel execution and significantly reducing processing time for large datasets. This shows that parallel processing is the most suitable approach for handling large-scale and computationally intensive tasks such as airport baggage handling systems. Overall, the project highlights the importance of selecting the appropriate processing method based on the nature of the workload and demonstrates how concurrency and parallelism can improve efficiency and scalability in practical applications.
 
 
