@@ -39,10 +39,11 @@ Software Requirement
 - Python version : 3.8 and above
 
 Python Libraries (Built-in)
-- ```bash  random```
-- ```bash  time```
-- ```bash  threading```
-- ```bash  multiprocessing```
+- ```random```
+- ```time```
+- ```threading```
+- ```multiprocessing ```
+  
   --------------
   ## ⚙️ INSTALLATION GUIDE
 Step 1: Start Virtual Machine
