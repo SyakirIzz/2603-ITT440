@@ -58,22 +58,27 @@ This project develops a high-performance **Parallel Mean Calculator** with a bea
 ## 🖥️ GUI Screenshots
 
 ### Tab 1: Data Setup
-!)
+<img width="1915" height="835" alt="image" src="https://github.com/user-attachments/assets/08503d43-e676-44bd-9273-bbf64c49a4e8" />
 
 ### Tab 2: Preview Numbers
-![Preview Tab](screenshots/tab2_preview.png)
+<img width="1918" height="986" alt="image" src="https://github.com/user-attachments/assets/56e9102f-c785-491c-803c-5f05d9f63efe" />
 
 ### Tab 3: Performance Results
-![Results Tab](screenshots/tab3_results.png)
-
-### Tab 4: Bar Chart
-![Chart Tab](screenshots/tab4_chart.png)
-
-### Tab 5: How It Works
-![Info Tab](screenshots/tab5_info.png)
+<img width="1916" height="952" alt="image" src="https://github.com/user-attachments/assets/7bf6c4bf-e447-4d2a-b811-3eabe39be266" />
 
 ---
 
 ## 📊 Test Results
 
 ### Test Configuration
+
+
+### Performance Results (Actual Output)
+
+| Rank | Method | Time (s) | Speedup | Algorithm | Cores Used |
+|:----:|--------|:--------:|:-------:|-----------|:-----------:|
+| 🥇 | **Threading** | **0.0797** | **6.12×** | Built-in sum / 4 threads | 4 threads |
+| 🥈 | Sequential | 0.4876 | 1.00× | Manual loop + variance | 1 core |
+| 🥉 | Multiprocessing | 0.7490 | 0.65× | Built-in sum / 12 processes | 12 processes |
+
+---
