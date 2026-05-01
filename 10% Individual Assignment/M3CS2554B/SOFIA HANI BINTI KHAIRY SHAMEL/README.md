@@ -81,7 +81,7 @@ $$\text{Risk Exposure Score} = \left( \frac{\text{Total High-Risk Ports Found}}{
 
 <br>
 
-### 6.2 Interpretation of Results
+### 6.3 Interpretation of Results
 By normalizing the data to a 0–100 scale, the auditor provides an immediate "Danger Rating" for the network:
 
 - **Current Audit Result: 51.10 / 100**
@@ -95,7 +95,7 @@ By normalizing the data to a 0–100 scale, the auditor provides an immediate "D
 <p align="center">
 <img width="568" height="538" alt="Screenshot 2026-05-01 150257" src="https://github.com/user-attachments/assets/7c1777f6-1413-4203-ac45-e4d503368ef9" />
   <br>
-  <b>Figure 7.1: Terminal Execution Trace showcasing performance metrics and the heuristic risk exposure score</b>
+  <b>Figure 7.1: Implementation of Heuristic Risk Assessment and Socket Discovery Logic</b>
 </p>
 
 <p>&nbsp;</p>
