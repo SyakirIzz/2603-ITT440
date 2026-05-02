@@ -1,21 +1,19 @@
 # Poker Game Simulator
 
+**Name:** ARIF AZIZAN BIN ARIFIN
+**Student ID:** 2024206174
+**Group :** M3CS2554A
 **Course Code:** ITT440  
 **Lecturer:** Shahadan Bin Saad  
 **YouTube Demo:** [Watch on YouTube](*youtube URL*)
 
 ## Overview
 
-The Poker Game Simulator is a Python-based application designed to simulate poker games, evaluate poker hands, and compare execution performance using sequential, concurrent, and parallel processing techniques. This project combines game logic with performance analysis and is suitable for course work in ITT440.
+The Poker Game Simulator is a Python-based application designed to simulate poker games, evaluate poker hands, and compare execution performance using sequential and parallel processing techniques. This project combines game logic with performance analysis.
 
 ## Problem Statement
 
-Many card game simulators need to solve two challenges at once:
-
-- Determine the best poker hand accurately from a set of available cards.
-- Process large volumes of simulation results efficiently, especially when reading and analyzing log data.
-
-This project tackles both by implementing correct poker hand ranking and then measuring how different computation techniques perform.
+The analysis of poker hand probabilities requires running a large number of game simulations to obtain accurate and meaningful results. However, different processing techniques may affect how efficiently these simulations are executed. Therefore, this project focuses on developing a poker game simulator capable of running up to 10,000,000 simulations and analyzing the results using two techniques, sequential and parallel processing. The purpose is to compare the performance of both approaches in handling large scale simulations and to observe their differences in execution.
 
 ## Objective
 
@@ -24,15 +22,15 @@ The main objectives of the Poker Game Simulator are:
 - Build a valid poker hand evaluator that ranks hands from High Card to Royal Flush.
 - Simulate single games and multiple game runs with random shuffled decks.
 - Save simulation results to a log file for later analysis.
-- Compare sequential, concurrent, and parallel processing methods.
+- Compare sequential and parallel processing methods.
 - Generate a clear report of hand frequencies and processing performance.
 
 ## Program Capabilities
 
 The simulator supports:
 
-- Interactive single-game play.
-- Multiple-game simulations with log output.
+- Interactive single game play.
+- Multiple game simulations with log output.
 - Automatic dealing of player and dealer cards.
 - Best 5-card hand selection from 7 available cards.
 - Hand ranking for all standard poker combinations.
@@ -43,6 +41,7 @@ The simulator supports:
 
 - `random.shuffle` for deck randomization.
 - `itertools.combinations` to evaluate all 5-card hand combinations from available cards.
+- `os` for checking existance of log files.
 - `collections.Counter` for rank counting and frequency analysis.
 - `threading` for concurrent log reading.
 - `multiprocessing` for parallel analysis across CPU cores.
@@ -58,26 +57,48 @@ The simulator supports:
 
 ## Required Python Package
 
+- `random`
+- `itertools`
+- `collections`
+- `os`
+- `threading`
+- `multiprocessing`
+- `time`
 - `tqdm`
-
-Install it with:
-
-```bash
-pip install tqdm
-```
 
 ## Installation Steps
 
 1. Install Python 3.10+ from https://www.python.org/downloads/
 2. Open a terminal or PowerShell window.
-3. Navigate to the project folder:
+3. Navigate to the project folder (use directory where the program is located):
 
 ```powershell
-cd "C:\Users\ACoralReef\OneDrive\Documents\python code"
+cd "C:\Users\(Username)\Downloads"
 ```
 
 4. Install the required package:
 
+```powershell
+pip install random
+```
+```powershell
+pip install itertools
+```
+```powershell
+pip install collections
+```
+```powershell
+pip install os
+```
+```powershell
+pip install threading
+```
+```powershell
+pip install multiprocessing
+```
+```powershell
+pip install time
+```
 ```powershell
 pip install tqdm
 ```
@@ -126,56 +147,86 @@ The program will prompt you to choose between:
 ### Sample Input
 
 ```text
-Do you want to run a single game or run a simulations?
-Enter 'single' for single game or 'simulations' for running simulations.
+        ====================================
+        Welcome to the Poker Game Simulator!
+        ====================================
+[๑╹ᆺ╹] This programs allows you to simulate poker games and shows the results of your hand.
+
+[๑╹ᆺ╹] Do you want to run a single game or run a simulations?
+[๑╹ᆺ╹] Enter 'single' for single game or 'simulations' for running simulations.
+
 >>> single
-[๑╹ᆺ  ╹] Enter number of players.
->>> 4
+
+        ======================
+         POKER GAME SIMULATOR 
+        ======================
+[๑╹ᆺ╹] Enter number of players.
+[๑╹ᆺ╹] (Excluding the dealer, maximum 22 players including user)
+
+>>> 5
 ```
 
 ### Sample Output
 
 ```text
-[๑╹ᆺ  ╹] Your hand: [(11, 'hearts'), (3, 'spades')]
-[๑╹ᆺ  ╹] Dealer's cards: [(4, 'clubs'), (5, 'hearts'), (6, 'diamonds'), (7, 'spades'), (9, 'clubs')]
-[๑╹ᆺ  ╹] Your best hand: [(3, 'spades'), (4, 'clubs'), (5, 'hearts'), (6, 'diamonds'), (7, 'spades')]
-[๑╹ᆺ  ╹] Your poker hand: Straight
+[๑╹ᆺ╹] Your hand: [(11, 'hearts'), (3, 'spades')]
+[๑╹ᆺ╹] Dealer's cards: [(4, 'clubs'), (5, 'hearts'), (6, 'diamonds'), (7, 'spades'), (9, 'clubs')]
+
+[๑╹ᆺ╹] Your best hand: [(3, 'spades'), (4, 'clubs'), (5, 'hearts'), (6, 'diamonds'), (7, 'spades')]
+[๑╹ᆺ╹] Your poker hand: Straight
 ```
 
 ### Sample Simulation Output
 
 ```text
-Completed 1000 simulations. Results saved to poker_simulation.log.
+Completed 10000000 simulations. Results saved to poker_simulation.log.
 
-[๑╹ᆺ  ╹] Starting concurrent reader for poker_simulation.log...
+[๑╹ᆺ╹] Starting concurrent reader for poker_simulation.log...
 
-[๑╹ᆺ  ╹] Starting sequential reading...
-[๑╹ᆺ  ╹] Using Sequential Technique...
+[๑╹ᆺ╹] Concurrent reading completed.
 
-[๑╹ᆺ  ╹] Starting parallel reading...
+[๑╹ᆺ╹] Starting sequential reading...
 
-[๑╹ᆺ  ╹] Parallel reading completed.
+[๑╹ᆺ╹] Using Sequential Technique...: 100%|██████████████████████████████████████████████| 10000000/10000000 [00:33<00:00, 302944.26it/s]
+
+[๑╹ᆺ╹] Sequential reading completed.
+
+[๑╹ᆺ╹] Starting parallel reading...
+
+[๑╹ᆺ╹] Using Parallel technique...: 100%|██████████████████████████████████████████████████████████████| 8/8 [00:00<00:00, 96144.50it/s]
+
+[๑╹ᆺ╹] Parallel reading completed.
+
+[๑╹ᆺ╹] Generating report...
 
 =============================================
  REPORT ON SIMULATION RESULTS AND TECHNIQUES 
 =============================================
 
 Poker hand results:
-	Royal Flush: 0
-	Straight Flush: 1
-	Four of a Kind: 12
-	Full House: 34
-	Flush: 75
-	Straight: 112
-	Three of a Kind: 226
-	Two Pair: 321
-	One Pair: 589
-	High Card: 630
+
+	Royal Flush: 14
+	Straight Flush: 135
+	Four of a Kind: 2451
+	Full House: 14313
+	Flush: 19788
+	Straight: 39392
+	Three of a Kind: 211232
+	Two Pair: 474927
+	One Pair: 4224833
+	High Card: 5012915
+
+=============================================
 
 Performance Comparison:
-	Sequential Time: 1.23 seconds
-	Parallel Time: 0.77 seconds
-	Improvement: 1.60x faster
+
+	Sequential Time: 33.02 seconds
+	Parallel Time: 0.00 seconds
+	Improvement: 436142.52x faster
+
+=============================================
+
+[๑╹ᆺ╹] Report generation completed.
 ```
 
 ## Screenshots
@@ -209,9 +260,12 @@ Important code sections:
 - `sequentialTech()` and `parallelTech()` — compare sequential and parallel log analysis
 - `reportResult()` — prints summary counts and performance comparison
 
+## Conclusion
+
+The Poker Game Simulator demonstrates how game logic, hand evaluation, and performance analysis can be combined in a single Python project. By supporting interactive play and large-scale simulations, it offers a practical example of both software design and computational optimization. The project also shows the value of comparing sequential, concurrent, and parallel techniques when processing real simulation data. In the simulation analysis, the parallel processing technique performs better than the sequential approach, highlighting the advantage of using multiple CPU cores for log analysis workloads.
+
 ## Notes
 
-- Replace the YouTube placeholder link with the actual project demo URL.
-- Ensure `tqdm` is installed before running the script.
+- Ensure all module is installed before running the script.
 - The simulator writes output to `poker_simulation.log` in the same folder.
-- For better performance benchmarking, use at least 1,000 simulations.
+- For better performance benchmarking, use at least 1,000,000 simulations.
