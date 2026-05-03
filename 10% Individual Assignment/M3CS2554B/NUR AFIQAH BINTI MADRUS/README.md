@@ -15,7 +15,9 @@
 
 ## 1. Introduction
 ### 1.1 Problem Statement
+<p align="justify">
 Processing large datasets efficiently is a common challenge in computing. When working with millions of numbers, the choice of processing approach can significantly impact execution time. This project investigates three different processing approaches, sequential, concurrent (threading), and parallel (multiprocessing) to determine which method performs best for a CPU-intensive counting and statistics task on 10 million random numbers.
+    
 ### 1.2 Project Objectives
 The main objectives of this project are:
 
@@ -108,7 +110,7 @@ The program generates several output files:
 | performance_graph.png         | Bar chart visualization                         |
 
 **Generated Numbers**
-<img width="181" height="380" alt="image" src="https://github.com/user-attachments/assets/7a00c0a2-6300-44f7-80bd-3536b8d012ef" />
+<img width="198" height="147" alt="image" src="https://github.com/user-attachments/assets/ca163965-a463-4175-9cfe-a6285ef765f4" />
 
 **Result Output**
 <img width="680" height="286" alt="image" src="https://github.com/user-attachments/assets/cf857f20-8426-4224-9059-6d41cdd94d74" />
@@ -119,9 +121,6 @@ The program generates several output files:
 **Performance Graph**
 <img width="1461" height="650" alt="image" src="https://github.com/user-attachments/assets/1e2e868e-13ca-4181-ba6b-39f9351f3549" />
 
-## 6. Conclusion
-This project successfully demonstrated the differences between sequential, concurrent, and parallel processing in Python. By processing 10 million numbers and computing 8 statistical metrics, we observed how:
-
-- Multiprocessing provides the best performance for CPU-intensive tasks by utilizing multiple CPU cores
-- Threading is not suitable for CPU-bound tasks due to Python's GIL
-- Sequential processing serves as a reliable baseline for comparison
+## 5. Conclusion
+<p align="justify">
+This project successfully demonstrated the differences between sequential, concurrent, and parallel processing in Python by processing 10 million numbers and computing 8 statistical metrics. The sequential approach served as a reliable baseline, completing the task in a straightforward manner without any additional overhead. The threading approach performed poorly due to Python's Global Interpreter Lock (GIL), which prevents true parallel execution by allowing only one thread to run at a time, adding unnecessary overhead without any speed benefit for CPU-intensive tasks. In contrast, the multiprocessing approach achieved the best performance by bypassing the GIL completely, as each process runs independently on separate CPU cores with its own Python interpreter, enabling true parallel execution. These findings clearly show that for CPU-bound tasks like large-scale number processing, multiprocessing is the optimal choice, while threading is better reserved for I/O-bound operations, and sequential processing remains suitable for simpler tasks where code simplicity matters more than performance.
