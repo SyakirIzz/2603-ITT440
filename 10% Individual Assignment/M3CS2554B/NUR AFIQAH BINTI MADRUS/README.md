@@ -24,7 +24,6 @@ The main objectives of this project are:
 1) To develop a Python program that counts even and odd numbers from a large dataset
 2) To compute 8 statistical metrics from the processed numbers
 3) To compare the performance of sequential, concurrent, and parallel processing approaches
-4) To analyze why certain approaches perform better than others
 ## 2. Program Design
 ### 2.1 Overview of the Application
 The application generates 10 million random numbers between 1 and 1,000,000, then processes them using three different approaches to compute the following 8 output metrics:
